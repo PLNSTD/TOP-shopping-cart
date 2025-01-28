@@ -1,7 +1,10 @@
+import ProductList from "../components/ProductList";
+
 const Shop = () => {
   return (
     <>
-      <p>Welcome to the Shop!</p>
+      <h1>Our Products</h1>
+      <ProductList />
     </>
   );
 };
