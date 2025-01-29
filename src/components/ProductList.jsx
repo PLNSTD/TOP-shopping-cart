@@ -1,5 +1,5 @@
 import { PropTypes } from "prop-types";
-import Card from "./Card";
+import ShopProductCard from "./ShopProductCard";
 
 // const staticProducts = Array.from({ length: 30 }, (_, index) => ({
 //   id: index + 1,
@@ -16,7 +16,7 @@ const ProductList = ({ products }) => {
           key={product["id"]}
           className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 p-4"
         >
-          <Card
+          <ShopProductCard
             title={product["title"]}
             image={product["image"]}
             price={product["price"]}
@@ -28,7 +28,15 @@ const ProductList = ({ products }) => {
 };
 
 ProductList.propTypes = {
-  products: PropTypes.Array.isrequired,
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      description: PropTypes.string,
+      onAddToCart: PropTypes.func,
+    })
+  ).isRequired,
 };
 
 export default ProductList;
