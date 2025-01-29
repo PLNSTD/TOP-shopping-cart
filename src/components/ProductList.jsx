@@ -8,7 +8,8 @@ import ShopProductCard from "./ShopProductCard";
 //   image: `https://via.placeholder.com/150?text=Product+${index + 1}`, // Dynamic image URL with product number
 // }));
 
-const ProductList = ({ products }) => {
+const ProductList = ({ products, onAddToCart }) => {
+  // console.log("onAddToCart prop:", onAddToCart);
   return (
     <div className="flex flex-wrap gap-x-2 w-full justify-center">
       {products.map((product) => (
@@ -20,6 +21,7 @@ const ProductList = ({ products }) => {
             title={product["title"]}
             image={product["image"]}
             price={product["price"]}
+            onAddToCart={onAddToCart}
           />
         </div>
       ))}
@@ -28,15 +30,20 @@ const ProductList = ({ products }) => {
 };
 
 ProductList.propTypes = {
-  products: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
-      description: PropTypes.string,
-      onAddToCart: PropTypes.func,
-    })
-  ).isRequired,
+  products: PropTypes.array.isRequired,
+  onAddToCart: PropTypes.func.isRequired,
 };
+
+// ProductList.propTypes = {
+//   products: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       title: PropTypes.string.isRequired,
+//       image: PropTypes.string.isRequired,
+//       price: PropTypes.number.isRequired,
+//       description: PropTypes.string,
+//       onAddToCart: PropTypes.func,
+//     })
+//   ).isRequired,
+// };
 
 export default ProductList;
