@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import CheckoutCartList from "../components/CheckoutCartList";
 import { useOutletContext } from "react-router-dom";
+import CartSummary from "../components/CartSummary";
 
 // const staticProducts = Array.from({ length: 30 }, (_, index) => ({
 //   id: index + 1,
@@ -12,9 +13,10 @@ import { useOutletContext } from "react-router-dom";
 const Cart = () => {
   const { cartList } = useOutletContext();
   return (
-    <div className="pl-4">
+    <div className="pl-4 flex flex-row">
       <p>Your Cart:</p>
       <CheckoutCartList products={cartList} />
+      <CartSummary />
     </div>
   );
 };
