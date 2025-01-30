@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import CartList from "../components/CartList";
+import CheckoutCartList from "../components/CheckoutCartList";
 import { useOutletContext } from "react-router-dom";
 
 // const staticProducts = Array.from({ length: 30 }, (_, index) => ({
@@ -10,11 +10,11 @@ import { useOutletContext } from "react-router-dom";
 // }));
 
 const Cart = () => {
-  const { cartList, addToCart } = useOutletContext();
+  const { cartList } = useOutletContext();
   return (
     <>
       <p>Your Cart:</p>
-      <CartList products={cartList} />
+      <CheckoutCartList products={cartList} />
     </>
   );
 };
