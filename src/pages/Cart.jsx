@@ -12,10 +12,10 @@ import { useOutletContext } from "react-router-dom";
 const Cart = () => {
   const { cartList } = useOutletContext();
   return (
-    <>
+    <div className="pl-4">
       <p>Your Cart:</p>
       <CheckoutCartList products={cartList} />
-    </>
+    </div>
   );
 };
 

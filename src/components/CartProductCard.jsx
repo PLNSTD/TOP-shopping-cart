@@ -2,10 +2,10 @@ import PropTypes from "prop-types";
 
 const CartProductCard = ({ title, image, price, quantity = 1 }) => {
   return (
-    <div className="w-2/3 border shadow-md flex flex-row items-center justify-between bg-[#EDEDE9] rounded-lg p-4 overflow-hidden">
-      <div className="w-100 flex flex-row gap-4">
+    <div className="w-3/4 h-28 border shadow-md flex flex-row items-center justify-between bg-[#EDEDE9] rounded-lg p-4 overflow-hidden hover:shadow-lg">
+      <div className="w-4/5 flex flex-row gap-4">
         {/* Image Section */}
-        <div className="w-20 h-20 flex items-center justify-center overflow-hidden rounded-t-lg">
+        <div className="w-1/5 h-20 flex items-center justify-center overflow-hidden rounded-t-lg">
           <img
             src={image}
             alt={title}
@@ -22,16 +22,16 @@ const CartProductCard = ({ title, image, price, quantity = 1 }) => {
         </div>
       </div>
       {/*Button Section */}
-      <div className="flex flex-col items-center justify-between gap-4">
-        <button className="rounded-lg p-1 text-[#EDEDE9] shadow-md hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-120 hover:border-1 hover:border-red-500 cursor-pointer">
+      <div className="w-1/5 flex flex-col items-center justify-between gap-4">
+        <button className="h-8 rounded-lg p-1 text-[#EDEDE9] shadow-md hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-120 hover:border-1 hover:border-red-800 cursor-pointer">
           🗑️
         </button>
         <div className="flex flex-row gap-4 items-center">
-          <button className="font-bold flex items-center justify-center w-8 h-8 bg-[#D5BDAF] text-black rounded-full shadow-md hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-105 hover:bg-[#F4A261] cursor-pointer">
+          <button className="font-bold flex items-center justify-center w-8 h-8 bg-[#D5BDAF] text-black rounded-full shadow-md hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-105 hover:border-1 hover:border-red-800 cursor-pointer">
             -
           </button>
           <p className="font-semibold">{quantity}</p>
-          <button className="font-bold flex items-center justify-center w-8 h-8 bg-[#D5BDAF] text-black rounded-full shadow-md hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-105 hover:bg-[#F4A261] cursor-pointer">
+          <button className="font-bold flex items-center justify-center w-8 h-8 bg-[#D5BDAF] text-black rounded-full shadow-md hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-105 hover:border-1 hover:border-green-800 cursor-pointer">
             +
           </button>
         </div>
