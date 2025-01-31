@@ -38,7 +38,7 @@ const CheckoutCartList = () => {
 };
 
 CheckoutCartList.propTypes = {
-  products: PropTypes.array.isRequired,
+  products: PropTypes.array,
 };
 
 export default CheckoutCartList;
