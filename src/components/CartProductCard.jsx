@@ -1,6 +1,14 @@
 import PropTypes from "prop-types";
 
-const CartProductCard = ({ title, image, price, quantity = 1 }) => {
+const CartProductCard = ({
+  title,
+  image,
+  price,
+  quantity = 1,
+  decreaseQt,
+  increaseQt,
+  deleteProduct,
+}) => {
   return (
     <div className="w-3/4 h-28 border shadow-md flex flex-row items-center justify-between bg-[#EDEDE9] rounded-lg p-4 overflow-hidden hover:shadow-lg">
       <div className="w-4/5 flex flex-row gap-4">
@@ -23,15 +31,30 @@ const CartProductCard = ({ title, image, price, quantity = 1 }) => {
       </div>
       {/*Button Section */}
       <div className="w-1/5 flex flex-col items-center justify-between gap-4">
-        <button className="h-8 rounded-lg p-1 text-[#EDEDE9] shadow-md hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-120 hover:border-1 hover:border-red-800 cursor-pointer">
+        <button
+          onClick={() => {
+            deleteProduct();
+          }}
+          className="h-8 rounded-lg p-1 text-[#EDEDE9] shadow-md hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-120 hover:border-1 hover:border-red-800 cursor-pointer"
+        >
           🗑️
         </button>
         <div className="flex flex-row gap-4 items-center">
-          <button className="font-bold flex items-center justify-center w-8 h-8 bg-[#D5BDAF] text-black rounded-full shadow-md hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-105 hover:border-1 hover:border-red-800 cursor-pointer">
+          <button
+            onClick={() => {
+              decreaseQt();
+            }}
+            className="font-bold flex items-center justify-center w-8 h-8 bg-[#D5BDAF] text-black rounded-full shadow-md hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-105 hover:border-1 hover:border-red-800 cursor-pointer"
+          >
             -
           </button>
           <p className="font-semibold">{quantity}</p>
-          <button className="font-bold flex items-center justify-center w-8 h-8 bg-[#D5BDAF] text-black rounded-full shadow-md hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-105 hover:border-1 hover:border-green-800 cursor-pointer">
+          <button
+            onClick={() => {
+              increaseQt();
+            }}
+            className="font-bold flex items-center justify-center w-8 h-8 bg-[#D5BDAF] text-black rounded-full shadow-md hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-105 hover:border-1 hover:border-green-800 cursor-pointer"
+          >
             +
           </button>
         </div>
@@ -44,7 +67,10 @@ CartProductCard.propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  quantity: PropTypes.number,
+  quantity: PropTypes.number.isRequired,
+  increaseQt: PropTypes.func.isRequired,
+  decreaseQt: PropTypes.func.isRequired,
+  deleteProduct: PropTypes.func.isRequired,
 };
 
 export default CartProductCard;

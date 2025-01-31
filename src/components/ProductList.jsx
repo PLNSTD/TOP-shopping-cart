@@ -21,7 +21,7 @@ const ProductList = ({ products, onAddToCart }) => {
             title={product["title"]}
             image={product["image"]}
             price={product["price"]}
-            onAddToCart={onAddToCart}
+            onAddToCart={() => onAddToCart(product)}
           />
         </div>
       ))}
