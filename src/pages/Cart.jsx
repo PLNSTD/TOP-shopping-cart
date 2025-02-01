@@ -13,7 +13,7 @@ const Cart = () => {
   return (
     <div className="pl-4">
       <p>Your Cart:</p>
-      <div className="flex flex-row">
+      <div className="flex flex-row justify-center">
         <CheckoutCartList />
         <CartSummary />
       </div>

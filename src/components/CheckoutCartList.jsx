@@ -19,7 +19,7 @@ const CheckoutCartList = () => {
   };
 
   return (
-    <div className="flex flex-col flex-wrap gap-x-2 gap-y-4 w-full justify-center">
+    <div className="flex flex-col flex-wrap gap-x-2 gap-y-4 w-2/3 justify-center">
       {cartList &&
         cartList.map((product) => (
           <CartProductCard

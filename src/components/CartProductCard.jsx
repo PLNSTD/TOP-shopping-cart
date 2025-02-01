@@ -10,10 +10,11 @@ const CartProductCard = ({
   deleteProduct,
 }) => {
   return (
-    <div className="w-3/4 h-28 border shadow-md flex flex-row items-center justify-between bg-[#EDEDE9] rounded-lg p-4 overflow-hidden hover:shadow-lg">
+    <div className="w-3/4 h-28 border shadow-md flex flex-row items-center justify-between bg-[#EDEDE9] rounded-lg p-4 overflow-hidden hover:shadow-lg transition-all duration-300">
+      {/* Image and Text Section */}
       <div className="w-4/5 flex flex-row gap-4">
         {/* Image Section */}
-        <div className="w-1/5 h-20 flex items-center justify-center overflow-hidden rounded-t-lg">
+        <div className="w-1/5 h-20 flex items-center justify-center overflow-hidden rounded-lg">
           <img
             src={image}
             alt={title}
@@ -23,37 +24,35 @@ const CartProductCard = ({
 
         {/* Text Content */}
         <div className="w-full flex flex-col gap-2 justify-start items-start overflow-hidden">
-          <p className="font-semibold text-lg truncate w-full overflow-hidden text-ellipsis whitespace-nowrap">
+          <p className="font-semibold text-lg truncate w-full overflow-hidden text-ellipsis whitespace-nowrap text-[#6B705C]">
             {title}
           </p>
-          <span className="text-lg font-bold text-gray-700">${price}</span>
+          <span className="text-lg font-bold text-[#6B705C]">${price}</span>
         </div>
       </div>
-      {/*Button Section */}
+
+      {/* Button Section */}
       <div className="w-1/5 flex flex-col items-center justify-between gap-4">
+        {/* Delete Button */}
         <button
-          onClick={() => {
-            deleteProduct();
-          }}
-          className="h-8 rounded-lg p-1 text-[#EDEDE9] shadow-md hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-120 hover:border-1 hover:border-red-800 cursor-pointer"
+          onClick={deleteProduct}
+          className="h-8 w-8 flex items-center justify-center rounded-lg text-[#EDEDE9] shadow-md hover:bg-[#A4727D] hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer"
         >
           🗑️
         </button>
+
+        {/* Quantity Controls */}
         <div className="flex flex-row gap-4 items-center">
           <button
-            onClick={() => {
-              decreaseQt();
-            }}
-            className="font-bold flex items-center justify-center w-8 h-8 bg-[#D5BDAF] text-black rounded-full shadow-md hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-105 hover:border-1 hover:border-red-800 cursor-pointer"
+            onClick={decreaseQt}
+            className="font-bold flex items-center justify-center w-8 h-8 bg-[#6B705C] text-[#EDEDE9] rounded-full shadow-md hover:bg-[#5A5F4D] hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer"
           >
             -
           </button>
-          <p className="font-semibold">{quantity}</p>
+          <p className="font-semibold text-[#6B705C]">{quantity}</p>
           <button
-            onClick={() => {
-              increaseQt();
-            }}
-            className="font-bold flex items-center justify-center w-8 h-8 bg-[#D5BDAF] text-black rounded-full shadow-md hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-105 hover:border-1 hover:border-green-800 cursor-pointer"
+            onClick={increaseQt}
+            className="font-bold flex items-center justify-center w-8 h-8 bg-[#6B705C] text-[#EDEDE9] rounded-full shadow-md hover:bg-[#5A5F4D] hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer"
           >
             +
           </button>
