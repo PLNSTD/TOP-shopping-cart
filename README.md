@@ -1,5 +1,7 @@
 # Shopping Cart App
 
+Try it! https://shopbypi.netlify.app
+
 ## Description
 
 A fully functional shopping cart application built with React, TailwindCSS, and FakeStoreAPI. Users can browse products, add them to the cart, and manage their orders.
