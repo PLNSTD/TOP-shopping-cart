@@ -1,31 +1,41 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import ShopProductCard from "../components/ShopProductCard"; // Reuse your ShopProductCard component
+import ShopProductCard from "../components/ShopProductCard";
 
 const Home = () => {
-  // Example featured products (replace with real data)
-  const featuredProducts = [
-    {
-      id: 1,
-      title: "Product A",
-      image: "https://via.placeholder.com/150",
-      price: 19.99,
-      description: "A great product for everyday use.",
-    },
-    {
-      id: 2,
-      title: "Product B",
-      image: "https://via.placeholder.com/150",
-      price: 29.99,
-      description: "Premium quality for a premium experience.",
-    },
-    {
-      id: 3,
-      title: "Product C",
-      image: "https://via.placeholder.com/150",
-      price: 39.99,
-      description: "Innovative design for modern living.",
-    },
-  ];
+  const [featuredProducts, setFeaturedProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Fetch products from FakeStoreAPI
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch(
+          "https://fakestoreapi.com/products?limit=3"
+        ); // Fetch only 3 products for the homepage
+        if (!response.ok) {
+          throw new Error("Failed to fetch products");
+        }
+        const data = await response.json();
+        setFeaturedProducts(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  if (loading) {
+    return <div className="text-center text-[#6B705C] p-8">Loading...</div>;
+  }
+
+  if (error) {
+    return <div className="text-center text-red-500 p-8">Error: {error}</div>;
+  }
 
   return (
     <div className="flex flex-col items-center">
