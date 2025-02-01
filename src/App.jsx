@@ -66,7 +66,7 @@ const App = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar cartList={cartList} />
       <main className="w-full">
         <Outlet
           context={{ cartList, addToCart, removeFromCart, deleteFromCart }}

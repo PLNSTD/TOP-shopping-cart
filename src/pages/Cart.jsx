@@ -12,7 +12,7 @@ import CartSummary from "../components/CartSummary";
 const Cart = () => {
   return (
     <div className="pl-4">
-      <p>Your Cart:</p>
+      <h1 className="text-4xl font-bold text-[#6B705C] mb-4">Your Cart:</h1>
       <div className="flex flex-row justify-center">
         <CheckoutCartList />
         <CartSummary />
