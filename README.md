@@ -1,8 +1,40 @@
-# React + Vite
+# Shopping Cart App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+A fully functional shopping cart application built with React, TailwindCSS, and FakeStoreAPI. Users can browse products, add them to the cart, and manage their orders.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- Browse products from FakeStoreAPI.
+- Add/remove products from the cart.
+- Sort products by price or name.
+- Responsive design for all devices.
+
+## Technologies Used
+
+- **React**: Front-end library for building the user interface.
+- **TailwindCSS**: Utility-first CSS framework for styling.
+- **React Router**: For client-side routing.
+- **FakeStoreAPI**: For fetching product data.
+
+## Usage
+
+- **Home Page**: Browse featured products.
+- **Shop Page**: View all products and add them to the cart.
+- **Cart Page**: Manage your cart and proceed to checkout.
+
+## Screenshots
+
+![Home Page](./screenshots/home.png)
+![Shop Page](./screenshots/shop.png)
+![Cart Page](./screenshots/cart.png)
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+
+## Acknowledgments
+
+- [FakeStoreAPI](https://fakestoreapi.com/) for providing product data.
+- [TailwindCSS](https://tailwindcss.com/) for the amazing utility-first CSS framework.
