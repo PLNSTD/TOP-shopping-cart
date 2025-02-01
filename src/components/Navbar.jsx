@@ -5,8 +5,8 @@ const liStyle =
 
 const Navbar = () => {
   return (
-    <nav className="bg-[#D6CCC2] p-4">
-      <ul className="container mx-auto flex justify-center items-center w-full gap-4 ml-0 mr-0">
+    <nav className="bg-[#D6CCC2] p-4 w-full">
+      <ul className="container mx-auto flex justify-center w-full gap-4 m-0">
         <li className={liStyle}>
           <Link to="/">Home</Link>
         </li>
