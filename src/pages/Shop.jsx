@@ -77,7 +77,9 @@ const Shop = () => {
           Sort by Name (Z-A)
         </button>
       </div>
-      <h1 className="text-2xl font-bold mb-4">Explore our Products</h1>
+      <h1 className="text-4xl font-bold text-[#6B705C] mb-4">
+        Explore our Products
+      </h1>
       <ProductList products={products} onAddToCart={addToCart} />
     </>
   );
